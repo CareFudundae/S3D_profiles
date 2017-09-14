@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<profile name="Delta_PLA" version="2017-09-09 16:12:25" app="S3D-Software 4.0.0">
+<profile name="Delta_PLA_fast!" version="2017-09-13 23:09:20" app="S3D-Software 4.0.0">
   <baseProfile>Kossel Mini (modified)</baseProfile>
   <printMaterial>PLA</printMaterial>
   <printQuality>Medium</printQuality>
@@ -33,7 +33,7 @@
   <spiralVaseMode>0</spiralVaseMode>
   <firstLayerHeightPercentage>100</firstLayerHeightPercentage>
   <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
-  <firstLayerUnderspeed>0.4</firstLayerUnderspeed>
+  <firstLayerUnderspeed>0.3</firstLayerUnderspeed>
   <useRaft>0</useRaft>
   <raftExtruder>0</raftExtruder>
   <raftTopLayers>2</raftTopLayers>
@@ -46,7 +46,7 @@
   <skirtExtruder>0</skirtExtruder>
   <skirtLayers>1</skirtLayers>
   <skirtOutlines>2</skirtOutlines>
-  <skirtOffset>5</skirtOffset>
+  <skirtOffset>10</skirtOffset>
   <usePrimePillar>0</usePrimePillar>
   <primePillarExtruder>999</primePillarExtruder>
   <primePillarWidth>12</primePillarWidth>
@@ -62,7 +62,7 @@
   <infillExtruder>0</infillExtruder>
   <internalInfillPattern>Rectilinear</internalInfillPattern>
   <externalInfillPattern>Rectilinear</externalInfillPattern>
-  <infillPercentage>15</infillPercentage>
+  <infillPercentage>10</infillPercentage>
   <outlineOverlapPercentage>65</outlineOverlapPercentage>
   <infillExtrusionWidthPercentage>100</infillExtrusionWidthPercentage>
   <minInfillLength>10</minInfillLength>
@@ -70,7 +70,7 @@
   <internalInfillAngles>45,-45</internalInfillAngles>
   <overlapInternalInfillAngles>0</overlapInternalInfillAngles>
   <externalInfillAngles>45,-45</externalInfillAngles>
-  <generateSupport>0</generateSupport>
+  <generateSupport>1</generateSupport>
   <supportExtruder>0</supportExtruder>
   <supportInfillPercentage>25</supportInfillPercentage>
   <supportExtraInflation>0</supportExtraInflation>
@@ -82,8 +82,8 @@
   <supportHorizontalPartOffset>0.3</supportHorizontalPartOffset>
   <supportUpperSeparationLayers>1</supportUpperSeparationLayers>
   <supportLowerSeparationLayers>1</supportLowerSeparationLayers>
-  <supportType>0</supportType>
-  <supportGridSpacing>2</supportGridSpacing>
+  <supportType>1</supportType>
+  <supportGridSpacing>1</supportGridSpacing>
   <maxOverhangAngle>45</maxOverhangAngle>
   <supportAngles>0</supportAngles>
   <temperatureController name="Primary Extruder">
@@ -92,8 +92,9 @@
     <relayBetweenLayers>0</relayBetweenLayers>
     <relayBetweenLoops>0</relayBetweenLoops>
     <stabilizeAtStartup>0</stabilizeAtStartup>
-    <setpoint layer="1" temperature="200"/>
-    <setpoint layer="2" temperature="215"/>
+    <setpoint layer="1" temperature="225"/>
+    <setpoint layer="2" temperature="245"/>
+    <setpoint layer="3" temperature="255"/>
   </temperatureController>
   <temperatureController name="Heated Bed">
     <temperatureNumber>1</temperatureNumber>
@@ -108,9 +109,9 @@
     <setpoint layer="2" speed="50"/>
   </fanSpeed>
   <blipFanToFullPower>1</blipFanToFullPower>
-  <adjustSpeedForCooling>1</adjustSpeedForCooling>
+  <adjustSpeedForCooling>0</adjustSpeedForCooling>
   <minSpeedLayerTime>10</minSpeedLayerTime>
-  <minCoolingSpeedSlowdown>50</minCoolingSpeedSlowdown>
+  <minCoolingSpeedSlowdown>75</minCoolingSpeedSlowdown>
   <increaseFanForCooling>1</increaseFanForCooling>
   <minFanLayerTime>60</minFanLayerTime>
   <maxCoolingFanSpeed>100</maxCoolingFanSpeed>
@@ -156,11 +157,11 @@
   <celebration>0</celebration>
   <celebrationSong>Random Song</celebrationSong>
   <postProcessing></postProcessing>
-  <defaultSpeed>3600</defaultSpeed>
-  <outlineUnderspeed>0.75</outlineUnderspeed>
+  <defaultSpeed>7200</defaultSpeed>
+  <outlineUnderspeed>0.6</outlineUnderspeed>
   <solidInfillUnderspeed>0.9</solidInfillUnderspeed>
-  <supportUnderspeed>0.8</supportUnderspeed>
-  <rapidXYspeed>7200</rapidXYspeed>
+  <supportUnderspeed>0.7</supportUnderspeed>
+  <rapidXYspeed>9000</rapidXYspeed>
   <rapidZspeed>2400</rapidZspeed>
   <minBridgingArea>5</minBridgingArea>
   <bridgingExtraInflation>2</bridgingExtraInflation>
@@ -175,7 +176,7 @@
   <useMinPrintHeight>0</useMinPrintHeight>
   <minPrintHeight>3.67</minPrintHeight>
   <useMaxPrintHeight>0</useMaxPrintHeight>
-  <maxPrintHeight>0.2</maxPrintHeight>
+  <maxPrintHeight>2</maxPrintHeight>
   <useDiaphragm>0</useDiaphragm>
   <diaphragmLayerInterval>20</diaphragmLayerInterval>
   <robustSlicing>1</robustSlicing>
@@ -206,8 +207,9 @@
       <relayBetweenLayers>0</relayBetweenLayers>
       <relayBetweenLoops>0</relayBetweenLoops>
       <stabilizeAtStartup>0</stabilizeAtStartup>
-      <setpoint layer="1" temperature="200"/>
-      <setpoint layer="2" temperature="215"/>
+      <setpoint layer="1" temperature="225"/>
+      <setpoint layer="2" temperature="245"/>
+      <setpoint layer="3" temperature="255"/>
     </temperatureController>
     <temperatureController name="Heated Bed">
       <temperatureNumber>1</temperatureNumber>
@@ -236,7 +238,7 @@
     <topSolidLayers>4</topSolidLayers>
     <bottomSolidLayers>3</bottomSolidLayers>
     <skirtLayers>1</skirtLayers>
-    <infillPercentage>15</infillPercentage>
+    <infillPercentage>10</infillPercentage>
     <supportInfillPercentage>25</supportInfillPercentage>
   </autoConfigureQuality>
   <autoConfigureQuality name="High">
