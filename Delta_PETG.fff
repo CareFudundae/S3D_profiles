@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<profile name="Delta_PETG" version="2017-09-02 12:31:34" app="S3D-Software 4.0.0">
+<profile name="Delta_PETG" version="2017-12-28 10:03:07" app="S3D-Software 4.0.0">
   <baseProfile>Kossel Mini (modified)</baseProfile>
   <printMaterial>PETG</printMaterial>
   <printQuality>Medium</printQuality>
@@ -9,20 +9,20 @@
     <diameter>0.4</diameter>
     <autoWidth>0</autoWidth>
     <width>0.4</width>
-    <extrusionMultiplier>1.05</extrusionMultiplier>
+    <extrusionMultiplier>1</extrusionMultiplier>
     <useRetract>1</useRetract>
     <retractionDistance>12</retractionDistance>
     <extraRestartDistance>0</extraRestartDistance>
-    <retractionZLift>0</retractionZLift>
+    <retractionZLift>0.5</retractionZLift>
     <retractionSpeed>2400</retractionSpeed>
-    <useCoasting>0</useCoasting>
-    <coastingDistance>1</coastingDistance>
+    <useCoasting>1</useCoasting>
+    <coastingDistance>0.4</coastingDistance>
     <useWipe>1</useWipe>
-    <wipeDistance>1</wipeDistance>
+    <wipeDistance>2</wipeDistance>
   </extruder>
   <primaryExtruder>0</primaryExtruder>
   <layerHeight>0.2</layerHeight>
-  <topSolidLayers>3</topSolidLayers>
+  <topSolidLayers>4</topSolidLayers>
   <bottomSolidLayers>3</bottomSolidLayers>
   <perimeterOutlines>3</perimeterOutlines>
   <printPerimetersInsideOut>1</printPerimetersInsideOut>
@@ -31,7 +31,7 @@
   <startPointOriginY>0</startPointOriginY>
   <sequentialIslands>0</sequentialIslands>
   <spiralVaseMode>0</spiralVaseMode>
-  <firstLayerHeightPercentage>95</firstLayerHeightPercentage>
+  <firstLayerHeightPercentage>100</firstLayerHeightPercentage>
   <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
   <firstLayerUnderspeed>0.4</firstLayerUnderspeed>
   <useRaft>0</useRaft>
@@ -42,11 +42,11 @@
   <raftSeparationDistance>0.14</raftSeparationDistance>
   <raftTopInfill>100</raftTopInfill>
   <aboveRaftSpeedMultiplier>0.3</aboveRaftSpeedMultiplier>
-  <useSkirt>1</useSkirt>
+  <useSkirt>0</useSkirt>
   <skirtExtruder>0</skirtExtruder>
   <skirtLayers>1</skirtLayers>
-  <skirtOutlines>1</skirtOutlines>
-  <skirtOffset>10</skirtOffset>
+  <skirtOutlines>10</skirtOutlines>
+  <skirtOffset>0</skirtOffset>
   <usePrimePillar>0</usePrimePillar>
   <primePillarExtruder>999</primePillarExtruder>
   <primePillarWidth>12</primePillarWidth>
@@ -82,7 +82,7 @@
   <supportHorizontalPartOffset>0.3</supportHorizontalPartOffset>
   <supportUpperSeparationLayers>1</supportUpperSeparationLayers>
   <supportLowerSeparationLayers>1</supportLowerSeparationLayers>
-  <supportType>0</supportType>
+  <supportType>1</supportType>
   <supportGridSpacing>2</supportGridSpacing>
   <maxOverhangAngle>45</maxOverhangAngle>
   <supportAngles>0</supportAngles>
@@ -92,7 +92,7 @@
     <relayBetweenLayers>0</relayBetweenLayers>
     <relayBetweenLoops>0</relayBetweenLoops>
     <stabilizeAtStartup>0</stabilizeAtStartup>
-    <setpoint layer="1" temperature="225"/>
+    <setpoint layer="1" temperature="235"/>
     <setpoint layer="2" temperature="240"/>
   </temperatureController>
   <temperatureController name="Heated Bed">
@@ -107,12 +107,12 @@
     <setpoint layer="1" speed="0"/>
   </fanSpeed>
   <blipFanToFullPower>1</blipFanToFullPower>
-  <adjustSpeedForCooling>1</adjustSpeedForCooling>
-  <minSpeedLayerTime>30</minSpeedLayerTime>
-  <minCoolingSpeedSlowdown>50</minCoolingSpeedSlowdown>
+  <adjustSpeedForCooling>0</adjustSpeedForCooling>
+  <minSpeedLayerTime>10</minSpeedLayerTime>
+  <minCoolingSpeedSlowdown>75</minCoolingSpeedSlowdown>
   <increaseFanForCooling>1</increaseFanForCooling>
   <minFanLayerTime>20</minFanLayerTime>
-  <maxCoolingFanSpeed>50</maxCoolingFanSpeed>
+  <maxCoolingFanSpeed>100</maxCoolingFanSpeed>
   <increaseFanForBridging>1</increaseFanForBridging>
   <bridgingFanSpeed>100</bridgingFanSpeed>
   <use5D>1</use5D>
@@ -146,25 +146,25 @@
   <baudRateOverride>250000</baudRateOverride>
   <overridePrinterModels>1</overridePrinterModels>
   <printerModelsOverride>Kossel2020.stl</printerModelsOverride>
-  <startingGcode>M140 S[bed1_temperature] ; Set bed temp and do not wait - preheat,M104 S[extruder0_temperature]; Set extruder and do not wait,G21 ; Units to mm,M190 S[bed1_temperature] ; Set bed temp and wait to be reached,M109 S[extruder0_temperature] ; Set extruder temp and wait to be reached,G28 ;home</startingGcode>
+  <startingGcode>,M117 Preheat bed and hotend,M140 S[bed1_temperature] ; Set bed temp and do not wait - preheat,M104 S[extruder0_temperature]; Set extruder and do not wait,G21 ; Units to mm,,G28 ;home,G0 Z100 F10000 ; start Imperial March,G0 Z50 F4500,G0 Z100 F4500,G0 Z50 F4500,G0 Z75 F3650,G0 Z60 F5550,G0 Z110 F4500,G0 Z85 F3650,G0 Z100 F5550,G0 Z50 F4500,G4 P500,G0 Z120 F6900,G0 Z50 F6900,G0 Z120 F6900,G0 Z55 F7150,G0 Z70 F5450,G0 Z120 F4500,G0 Z95 F3650,G0 Z110 F5550,G0 Z160 F4500,G4 P1000 ; end Imperial March,,M190 S[bed1_temperature] ; Set bed temp and wait to be reached,M117 Bed heating complete,M109 S[extruder0_temperature] ; Set extruder temp and wait to be reached,M117 Hotend heating complete,G28; home,,; skirt,M117 Begin Skirt,G92 E0,G1 E-12.0000 F2400,G1 X-85 Y0 Z.162 F9000,G1 E10.0000 F720,,G92 E0,G1 X-83.804 Y-8.598 E0.0002 F3600,G1 X-83.615 Y-10.277 E0.0561,G1 X-83.614 Y-10.283 E0.0563,G1 X-82.317 Y-17.915 E0.3124,G1 X-82.316 Y-17.922 E0.3126,G1 X-81.939 Y-19.571 E0.3686,G1 X-81.938 Y-19.577 E0.3688,G1 X-79.791 Y-27.025 E0.6252,G1 X-79.789 Y-27.032 E0.6254,G1 X-79.231 Y-28.627 E0.6813,G1 X-79.229 Y-28.633 E0.6816,G1 X-76.264 Y-35.789 E0.9378,G1 X-76.261 Y-35.795 E0.9380,G1 X-75.528 Y-37.318 E0.9939,G1 X-75.524 Y-37.324 E0.9942,G1 X-71.777 Y-44.103 E1.2504,G1 X-71.774 Y-44.109 E1.2506,G1 X-70.874 Y-45.540 E1.3065,G1 X-70.871 Y-45.545 E1.3067,G1 X-66.388 Y-51.862 E1.5630,G1 X-66.384 Y-51.867 E1.5632,G1 X-65.330 Y-53.189 E1.6191,G1 X-65.326 Y-53.194 E1.6193,G1 X-60.164 Y-58.969 E1.8756,G1 X-60.159 Y-58.974 E1.8758,G1 X-58.964 Y-60.169 E1.9317,G1 X-58.959 Y-60.174 E1.9319,G1 X-53.183 Y-65.335 E2.1882,G1 X-53.178 Y-65.339 E2.1884,G1 X-51.856 Y-66.393 E2.2443,G1 X-51.851 Y-66.397 E2.2445,G1 X-45.533 Y-70.878 E2.5008,G1 X-45.528 Y-70.882 E2.5010,G1 X-44.097 Y-71.781 E2.5569,G1 X-44.091 Y-71.785 E2.5571,G1 X-37.311 Y-75.531 E2.8133,G1 X-37.305 Y-75.534 E2.8136,G1 X-35.782 Y-76.267 E2.8695,G1 X-35.776 Y-76.270 E2.8697,G1 X-28.620 Y-79.233 E3.1259,G1 X-28.614 Y-79.236 E3.1262,G1 X-27.018 Y-79.794 E3.1821,G1 X-27.012 Y-79.796 E3.1823,G1 X-19.569 Y-81.940 E3.4385,G1 X-19.562 Y-81.941 E3.4388,G1 X-17.914 Y-82.317 E3.4947,G1 X-17.908 Y-82.319 E3.4949,G1 X-10.271 Y-83.615 E3.7511,G1 X-10.265 Y-83.616 E3.7513,G1 X-8.585 Y-83.805 E3.8073,G1 X-8.578 Y-83.806 E3.8075,G1 X-0.845 Y-84.240 E4.0637,G1 X-0.838 Y-84.240 E4.0639,G1 X0.852 Y-84.240 E4.1199,G1 X0.859 Y-84.239 E4.1201,G1 X8.592 Y-83.805 E4.3763,G1 X8.599 Y-83.804 E4.3765,G1 X10.279 Y-83.615 E4.4324,G1 X10.285 Y-83.614 E4.4327,G1 X17.922 Y-82.316 E4.6889,G1 X17.928 Y-82.314 E4.6891,G1 X19.576 Y-81.938 E4.7450,G1 X19.582 Y-81.936 E4.7453,G1 X27.025 Y-79.791 E5.0015,G1 X27.032 Y-79.789 E5.0017,G1 X28.627 Y-79.231 E5.0576,G1 X28.633 Y-79.229 E5.0578,G1 X35.789 Y-76.264 E5.3141,G1 X35.795 Y-76.261 E5.3143,G1 X37.318 Y-75.528 E5.3702,G1 X37.324 Y-75.524 E5.3704,G1 X44.103 Y-71.777 E5.6267,G1 X44.109 Y-71.774 E5.6269,G1 X45.540 Y-70.874 E5.6828,G1 X45.545 Y-70.871 E5.6830,G1 X51.862 Y-66.388 E5.9393,G1 X51.867 Y-66.384 E5.9395,G1 X53.189 Y-65.330 E5.9954,G1 X53.194 Y-65.326 E5.9956,G1 X58.969 Y-60.164 E6.2519,G1 X58.974 Y-60.159 E6.2521,G1 X60.169 Y-58.964 E6.3080,G1 X60.174 Y-58.959 E6.3082,G1 X65.335 Y-53.183 E6.5645,G1 X65.339 Y-53.178 E6.5647,G1 X66.393 Y-51.856 E6.6206,G1 X66.397 Y-51.851 E6.6208,G1 X70.878 Y-45.533 E6.8770,G1 X70.882 Y-45.528 E6.8773,G1 X71.781 Y-44.097 E6.9332,G1 X71.785 Y-44.091 E6.9334,G1 X75.531 Y-37.311 E7.1896,G1 X75.534 Y-37.305 E7.1899,G1 X76.267 Y-35.782 E7.2458,G1 X76.270 Y-35.776 E7.2460,G1 X79.233 Y-28.620 E7.5022,G1 X79.236 Y-28.614 E7.5024,G1 X79.794 Y-27.018 E7.5584,G1 X79.796 Y-27.012 E7.5586,G1 X81.940 Y-19.569 E7.8148,G1 X81.941 Y-19.562 E7.8150,G1 X82.317 Y-17.914 E7.8710,G1 X82.319 Y-17.908 E7.8712,G1 X83.615 Y-10.271 E8.1274,G1 X83.616 Y-10.265 E8.1276,G1 X83.805 Y-8.585 E8.1835,G1 X83.806 Y-8.578 E8.1838,G1 X84.240 Y-0.845 E8.4400,G1 X84.240 Y-0.838 E8.4402,G1 X84.240 Y0.852 E8.4961,G1 X84.239 Y0.859 E8.4964,G1 X83.805 Y8.592 E8.7526,G1 X83.804 Y8.599 E8.7528,G1 X83.615 Y10.279 E8.8087,G1 X83.614 Y10.285 E8.8090,G1 X82.316 Y17.922 E9.0652,G1 X82.314 Y17.928 E9.0654,G1 X81.938 Y19.576 E9.1213,G1 X81.936 Y19.582 E9.1215,G1 X79.791 Y27.025 E9.3778,G1 X79.789 Y27.032 E9.3780,G1 X79.231 Y28.627 E9.4339,G1 X79.229 Y28.633 E9.4341,G1 X76.264 Y35.789 E9.6904,G1 X76.261 Y35.795 E9.6906,G1 X75.528 Y37.318 E9.7465,G1 X75.524 Y37.324 E9.7467,G1 X71.777 Y44.103 E10.0030,G1 X71.774 Y44.109 E10.0032,G1 X70.874 Y45.540 E10.0591,G1 X70.871 Y45.545 E10.0593,G1 X66.388 Y51.862 E10.3156,G1 X66.384 Y51.867 E10.3158,G1 X65.330 Y53.189 E10.3717,G1 X65.326 Y53.194 E10.3719,G1 X60.164 Y58.969 E10.6281,G1 X60.159 Y58.974 E10.6284,G1 X58.964 Y60.169 E10.6843,G1 X58.959 Y60.174 E10.6845,G1 X53.183 Y65.335 E10.9407,G1 X53.178 Y65.339 E10.9410,G1 X51.856 Y66.393 E10.9969,G1 X51.851 Y66.397 E10.9971,G1 X45.533 Y70.878 E11.2533,G1 X45.528 Y70.882 E11.2536,G1 X44.097 Y71.781 E11.3095,G1 X44.091 Y71.785 E11.3097,G1 X37.311 Y75.531 E11.5659,G1 X37.305 Y75.534 E11.5661,G1 X35.782 Y76.267 E11.6221,G1 X35.776 Y76.270 E11.6223,G1 X28.620 Y79.233 E11.8785,G1 X28.614 Y79.236 E11.8787,G1 X27.018 Y79.794 E11.9346,G1 X27.012 Y79.796 E11.9349,G1 X19.569 Y81.940 E12.1911,G1 X19.562 Y81.941 E12.1913,G1 X17.914 Y82.317 E12.2472,G1 X17.908 Y82.319 E12.2475,G1 X10.271 Y83.615 E12.5037,G1 X10.265 Y83.616 E12.5039,G1 X8.585 Y83.805 E12.5598,G1 X8.578 Y83.806 E12.5601,G1 X0.845 Y84.240 E12.8163,G1 X0.838 Y84.240 E12.8165,G1 X-0.852 Y84.240 E12.8724,G1 X-0.859 Y84.239 E12.8726,G1 X-8.592 Y83.805 E13.1289,G1 X-8.599 Y83.804 E13.1291,G1 X-10.279 Y83.615 E13.1850,G1 X-10.285 Y83.614 E13.1852,G1 X-17.922 Y82.316 E13.4415,G1 X-17.928 Y82.314 E13.4417,G1 X-19.576 Y81.938 E13.4976,G1 X-19.582 Y81.936 E13.4978,G1 X-27.025 Y79.791 E13.7541,G1 X-27.032 Y79.789 E13.7543,G1 X-28.627 Y79.231 E13.8102,G1 X-28.633 Y79.229 E13.8104,G1 X-35.789 Y76.264 E14.0667,G1 X-35.795 Y76.261 E14.0669,G1 X-37.318 Y75.528 E14.1228,G1 X-37.324 Y75.524 E14.1230,G1 X-44.103 Y71.777 E14.3792,G1 X-44.109 Y71.774 E14.3795,G1 X-45.540 Y70.874 E14.4354,G1 X-45.545 Y70.871 E14.4356,G1 X-51.862 Y66.388 E14.6918,G1 X-51.867 Y66.384 E14.6921,G1 X-53.189 Y65.330 E14.7480,G1 X-53.194 Y65.326 E14.7482,G1 X-58.969 Y60.164 E15.0044,G1 X-58.974 Y60.159 E15.0047,G1 X-60.169 Y58.964 E15.0606,G1 X-60.174 Y58.959 E15.0608,G1 X-65.335 Y53.183 E15.3170,G1 X-65.339 Y53.178 E15.3172,G1 X-66.393 Y51.856 E15.3732,G1 X-66.397 Y51.851 E15.3734,G1 X-70.878 Y45.533 E15.6296,G1 X-70.882 Y45.528 E15.6298,G1 X-71.781 Y44.097 E15.6857,G1 X-71.785 Y44.091 E15.6860,G1 X-75.531 Y37.311 E15.9422,G1 X-75.534 Y37.305 E15.9424,G1 X-76.267 Y35.782 E15.9983,G1 X-76.270 Y35.776 E15.9986,G1 X-79.233 Y28.620 E16.2548,G1 X-79.236 Y28.614 E16.2550,G1 X-79.794 Y27.018 E16.3109,G1 X-79.796 Y27.012 E16.3112,G1 X-81.940 Y19.569 E16.5674,G1 X-81.941 Y19.562 E16.5676,G1 X-82.317 Y17.914 E16.6235,G1 X-82.319 Y17.908 E16.6237,G1 X-83.615 Y10.271 E16.8800,G1 X-83.616 Y10.265 E16.8802,G1 X-83.805 Y8.585 E16.9361,G1 X-83.806 Y8.578 E16.9363,G1 X-84.240 Y0.845 E17.1926,G1 X-84.240 Y0.838 E17.1928,G1 X-84.240 Y-0.852 E17.2487,G1 X-84.239 Y-0.859 E17.2489,G1 X-83.805 Y-8.592 E17.5051,,,M117 Begin Print</startingGcode>
   <layerChangeGcode></layerChangeGcode>
   <retractionGcode></retractionGcode>
   <toolChangeGcode></toolChangeGcode>
-  <endingGcode>M104 S0 ; turn off extruder,M140 S0 ; turn off bed,G91 ;relative positioning,G1 E-3 F300  ;retract the filament a bit before lifting the nozzle, to release some of the pressure,G90 ;absolute positioning,G28 ; home axes,M84 ; disable motors,M107; turn off fan</endingGcode>
+  <endingGcode>M104 S0 ; turn off extruder,M140 S0 ; turn off bed,G91 ;relative positioning,G0 Z10; move up 10mm,G1 E-3 F300  ;retract the filament a bit before lifting the nozzle, to release some of the pressure,G90 ;absolute positioning,G28 ; home axes,M84 ; disable motors,M107; turn off fan,G91 ;relative positioning,G0 Z-5 F3000; move down 5mm from home,M117 Print Complete,M300 S20 P100</endingGcode>
   <exportFileFormat>gcode</exportFileFormat>
   <celebration>0</celebration>
   <celebrationSong>Random Song</celebrationSong>
   <postProcessing></postProcessing>
-  <defaultSpeed>3600</defaultSpeed>
-  <outlineUnderspeed>0.75</outlineUnderspeed>
-  <solidInfillUnderspeed>0.75</solidInfillUnderspeed>
-  <supportUnderspeed>0.75</supportUnderspeed>
-  <rapidXYspeed>7200</rapidXYspeed>
+  <defaultSpeed>3000</defaultSpeed>
+  <outlineUnderspeed>0.4</outlineUnderspeed>
+  <solidInfillUnderspeed>0.8</solidInfillUnderspeed>
+  <supportUnderspeed>0.8</supportUnderspeed>
+  <rapidXYspeed>4800</rapidXYspeed>
   <rapidZspeed>2400</rapidZspeed>
   <minBridgingArea>5</minBridgingArea>
   <bridgingExtraInflation>2</bridgingExtraInflation>
-  <bridgingExtrusionMultiplier>0.5</bridgingExtrusionMultiplier>
-  <bridgingSpeedMultiplier>1.5</bridgingSpeedMultiplier>
+  <bridgingExtrusionMultiplier>0.75</bridgingExtrusionMultiplier>
+  <bridgingSpeedMultiplier>1.25</bridgingSpeedMultiplier>
   <useFixedBridgingAngle>0</useFixedBridgingAngle>
   <fixedBridgingAngle>0</fixedBridgingAngle>
   <applyBridgingToPerimeters>1</applyBridgingToPerimeters>
@@ -186,16 +186,16 @@
   <retractWhileWiping>1</retractWhileWiping>
   <onlyWipeOutlines>1</onlyWipeOutlines>
   <avoidCrossingOutline>1</avoidCrossingOutline>
-  <maxMovementDetourFactor>3</maxMovementDetourFactor>
+  <maxMovementDetourFactor>10</maxMovementDetourFactor>
   <toolChangeRetractionDistance>12</toolChangeRetractionDistance>
   <toolChangeExtraRestartDistance>-0.5</toolChangeExtraRestartDistance>
   <toolChangeRetractionSpeed>600</toolChangeRetractionSpeed>
   <externalThinWallType>1</externalThinWallType>
   <internalThinWallType>1</internalThinWallType>
-  <thinWallAllowedOverlapPercentage>10</thinWallAllowedOverlapPercentage>
-  <singleExtrusionMinLength>5</singleExtrusionMinLength>
-  <singleExtrusionMinPrintingWidthPercentage>50</singleExtrusionMinPrintingWidthPercentage>
-  <singleExtrusionMaxPrintingWidthPercentage>200</singleExtrusionMaxPrintingWidthPercentage>
+  <thinWallAllowedOverlapPercentage>30</thinWallAllowedOverlapPercentage>
+  <singleExtrusionMinLength>1</singleExtrusionMinLength>
+  <singleExtrusionMinPrintingWidthPercentage>75</singleExtrusionMinPrintingWidthPercentage>
+  <singleExtrusionMaxPrintingWidthPercentage>150</singleExtrusionMaxPrintingWidthPercentage>
   <singleExtrusionEndpointExtension>0.2</singleExtrusionEndpointExtension>
   <horizontalSizeCompensation>0</horizontalSizeCompensation>
   <autoConfigureQuality name="Fast">
@@ -208,7 +208,7 @@
   </autoConfigureQuality>
   <autoConfigureQuality name="Medium">
     <layerHeight>0.2</layerHeight>
-    <topSolidLayers>3</topSolidLayers>
+    <topSolidLayers>4</topSolidLayers>
     <bottomSolidLayers>3</bottomSolidLayers>
     <skirtLayers>1</skirtLayers>
     <infillPercentage>20</infillPercentage>
@@ -222,6 +222,14 @@
     <infillPercentage>50</infillPercentage>
     <supportInfillPercentage>40</supportInfillPercentage>
   </autoConfigureQuality>
+  <autoConfigureQuality name="0.2mm, 80mm/s">
+    <layerHeight>0.2</layerHeight>
+    <topSolidLayers>3</topSolidLayers>
+    <bottomSolidLayers>2</bottomSolidLayers>
+    <skirtLayers>1</skirtLayers>
+    <infillPercentage>0</infillPercentage>
+    <supportInfillPercentage>25</supportInfillPercentage>
+  </autoConfigureQuality>
   <autoConfigureMaterial name="PETG">
     <temperatureController name="Primary Extruder">
       <temperatureNumber>0</temperatureNumber>
@@ -229,7 +237,7 @@
       <relayBetweenLayers>0</relayBetweenLayers>
       <relayBetweenLoops>0</relayBetweenLoops>
       <stabilizeAtStartup>0</stabilizeAtStartup>
-      <setpoint layer="1" temperature="225"/>
+      <setpoint layer="1" temperature="235"/>
       <setpoint layer="2" temperature="240"/>
     </temperatureController>
     <temperatureController name="Heated Bed">
@@ -240,7 +248,7 @@
       <stabilizeAtStartup>0</stabilizeAtStartup>
       <setpoint layer="1" temperature="75"/>
     </temperatureController>
-    <globalExtrusionMultiplier>1.05</globalExtrusionMultiplier>
+    <globalExtrusionMultiplier>1</globalExtrusionMultiplier>
     <fanSpeed>
       <setpoint layer="1" speed="0"/>
     </fanSpeed>
