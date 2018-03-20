@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<profile name="Delta_smoothie" version="2018-03-15 00:29:57" app="S3D-Software 4.0.0">
+<profile name="Delta_smoothie" version="2018-03-19 20:44:12" app="S3D-Software 4.0.0">
   <baseProfile>Kossel Mini (modified)</baseProfile>
   <printMaterial>PLA</printMaterial>
   <printQuality>0.2mm</printQuality>
@@ -16,15 +16,15 @@
     <retractionZLift>0.4</retractionZLift>
     <retractionSpeed>6000</retractionSpeed>
     <useCoasting>1</useCoasting>
-    <coastingDistance>0.2</coastingDistance>
+    <coastingDistance>0.4</coastingDistance>
     <useWipe>1</useWipe>
     <wipeDistance>1</wipeDistance>
   </extruder>
   <primaryExtruder>0</primaryExtruder>
   <layerHeight>0.2</layerHeight>
-  <topSolidLayers>3</topSolidLayers>
+  <topSolidLayers>4</topSolidLayers>
   <bottomSolidLayers>3</bottomSolidLayers>
-  <perimeterOutlines>2</perimeterOutlines>
+  <perimeterOutlines>3</perimeterOutlines>
   <printPerimetersInsideOut>1</printPerimetersInsideOut>
   <startPointOption>2</startPointOption>
   <startPointOriginX>0</startPointOriginX>
@@ -92,7 +92,8 @@
     <relayBetweenLayers>0</relayBetweenLayers>
     <relayBetweenLoops>0</relayBetweenLoops>
     <stabilizeAtStartup>0</stabilizeAtStartup>
-    <setpoint layer="1" temperature="200"/>
+    <setpoint layer="1" temperature="210"/>
+    <setpoint layer="2" temperature="200"/>
   </temperatureController>
   <temperatureController name="Heated Bed">
     <temperatureNumber>1</temperatureNumber>
@@ -108,7 +109,7 @@
     <setpoint layer="3" speed="50"/>
   </fanSpeed>
   <blipFanToFullPower>1</blipFanToFullPower>
-  <adjustSpeedForCooling>0</adjustSpeedForCooling>
+  <adjustSpeedForCooling>1</adjustSpeedForCooling>
   <minSpeedLayerTime>5</minSpeedLayerTime>
   <minCoolingSpeedSlowdown>35</minCoolingSpeedSlowdown>
   <increaseFanForCooling>1</increaseFanForCooling>
@@ -147,19 +148,19 @@
   <baudRateOverride>250000</baudRateOverride>
   <overridePrinterModels>1</overridePrinterModels>
   <printerModelsOverride>Kossel2020.stl</printerModelsOverride>
-  <startingGcode>,M117 Preheat bed and hotend,M140 S[bed1_temperature] ; Set bed temp and do not wait - preheat,M104 S[extruder0_temperature]; Set extruder and do not wait,G21 ; Units to mm,,G28 ;home,G0 Z100 F10000 ; start Imperial March,G0 Z50 F4500,G0 Z100 F4500,G0 Z50 F4500,G0 Z75 F3650,G0 Z60 F5550,G0 Z110 F4500,G0 Z85 F3650,G0 Z100 F5550,G0 Z50 F4500,G4 P500,G0 Z120 F6900,G0 Z50 F6900,G0 Z120 F6900,G0 Z55 F7150,G0 Z70 F5450,G0 Z120 F4500,G0 Z95 F3650,G0 Z110 F5550,G0 Z160 F4500,G4 P1000 ; end Imperial March,,M109 S[extruder0_temperature] ; Set extruder temp and wait to be reached,M117 Hotend heating complete,M190 S[bed1_temperature] ; Set bed temp and wait to be reached,M117 Bed heating complete,G28; home,,M117 Purge Nozzle,G1 X0 Y-113 Z5 F7200,G92 E0,G0 E20 F300,G92 E0,;G1 X0 Y0 Z1.0 F10000,,M117 Begin Print</startingGcode>
+  <startingGcode>,M117 Preheat bed and hotend,M140 S[bed1_temperature] ; Set bed temp and do not wait - preheat,M104 S[extruder0_temperature]; Set extruder and do not wait,G21 ; Units to mm,,G28 ;home,G0 Z100 F10000 ; start Imperial March,G0 Z50 F4500,G0 Z100 F4500,G0 Z50 F4500,G0 Z75 F3650,G0 Z60 F5550,G0 Z110 F4500,G0 Z85 F3650,G0 Z100 F5550,G0 Z50 F4500,G4 P500,G0 Z120 F6900,G0 Z50 F6900,G0 Z120 F6900,G0 Z55 F7150,G0 Z70 F5450,G0 Z120 F4500,G0 Z95 F3650,G0 Z110 F5550,G0 Z160 F4500,G4 P1000 ; end Imperial March,,M109 S[extruder0_temperature] ; Set extruder temp and wait to be reached,M117 Hotend heating complete,M190 S[bed1_temperature] ; Set bed temp and wait to be reached,M117 Bed heating complete,G28; home,,M117 Purge Nozzle,G1 X0 Y-113 Z5 F7200,G92 E0,G0 E20 F300,G4 S2,G92 E0,;G1 X0 Y0 Z1.0 F10000,,M117 Begin Print</startingGcode>
   <layerChangeGcode></layerChangeGcode>
   <retractionGcode></retractionGcode>
   <toolChangeGcode></toolChangeGcode>
-  <endingGcode>M104 S0 ; turn off extruder,M140 S0 ; turn off bed,G91 ;relative positioning,G1 E-3 F300  ;retract the filament a bit before lifting the nozzle to release some of the pressure,G0 Z10; move up 10mm,G90 ;absolute positioning,G28 ; home axes,M107; turn off fan,G91 ;relative positioning,;G0 Z-5 F3000; move down 5mm from home,M117 Print Complete,M300 S20 P100,M18 ;disable motors</endingGcode>
+  <endingGcode>M104 S0 ; turn off extruder,M140 S0 ; turn off bed,G91 ;relative positioning,G1 Z10 E-5 F6000  ;retract the filament a bit while lifting nozzle ;before lifting the nozzle to release some of the pressure,;G0 Z10; move up 10mm,G90 ;absolute positioning,G28 ; home axes,M107; turn off fan,G91 ;relative positioning,;G0 Z-5 F3000; move down 5mm from home,M117 Print Complete,M300 S20 P100,M18 ;disable motors</endingGcode>
   <exportFileFormat>gcode</exportFileFormat>
   <celebration>0</celebration>
   <celebrationSong>Random Song</celebrationSong>
   <postProcessing></postProcessing>
-  <defaultSpeed>4800</defaultSpeed>
-  <outlineUnderspeed>0.6</outlineUnderspeed>
+  <defaultSpeed>3600</defaultSpeed>
+  <outlineUnderspeed>0.5</outlineUnderspeed>
   <solidInfillUnderspeed>0.75</solidInfillUnderspeed>
-  <supportUnderspeed>0.75</supportUnderspeed>
+  <supportUnderspeed>0.8</supportUnderspeed>
   <rapidXYspeed>6000</rapidXYspeed>
   <rapidZspeed>1800</rapidZspeed>
   <minBridgingArea>5</minBridgingArea>
@@ -175,23 +176,23 @@
   <useMinPrintHeight>0</useMinPrintHeight>
   <minPrintHeight>15</minPrintHeight>
   <useMaxPrintHeight>0</useMaxPrintHeight>
-  <maxPrintHeight>20</maxPrintHeight>
+  <maxPrintHeight>3</maxPrintHeight>
   <useDiaphragm>0</useDiaphragm>
   <diaphragmLayerInterval>20</diaphragmLayerInterval>
   <robustSlicing>1</robustSlicing>
   <mergeAllIntoSolid>0</mergeAllIntoSolid>
   <onlyRetractWhenCrossingOutline>1</onlyRetractWhenCrossingOutline>
-  <retractBetweenLayers>1</retractBetweenLayers>
+  <retractBetweenLayers>0</retractBetweenLayers>
   <useRetractionMinTravel>1</useRetractionMinTravel>
   <retractionMinTravel>0</retractionMinTravel>
   <retractWhileWiping>1</retractWhileWiping>
   <onlyWipeOutlines>1</onlyWipeOutlines>
   <avoidCrossingOutline>1</avoidCrossingOutline>
-  <maxMovementDetourFactor>10</maxMovementDetourFactor>
+  <maxMovementDetourFactor>2</maxMovementDetourFactor>
   <toolChangeRetractionDistance>12</toolChangeRetractionDistance>
   <toolChangeExtraRestartDistance>-0.5</toolChangeExtraRestartDistance>
   <toolChangeRetractionSpeed>600</toolChangeRetractionSpeed>
-  <externalThinWallType>1</externalThinWallType>
+  <externalThinWallType>0</externalThinWallType>
   <internalThinWallType>1</internalThinWallType>
   <thinWallAllowedOverlapPercentage>30</thinWallAllowedOverlapPercentage>
   <singleExtrusionMinLength>1</singleExtrusionMinLength>
@@ -206,7 +207,8 @@
       <relayBetweenLayers>0</relayBetweenLayers>
       <relayBetweenLoops>0</relayBetweenLoops>
       <stabilizeAtStartup>0</stabilizeAtStartup>
-      <setpoint layer="1" temperature="200"/>
+      <setpoint layer="1" temperature="210"/>
+      <setpoint layer="2" temperature="200"/>
     </temperatureController>
     <temperatureController name="Heated Bed">
       <temperatureNumber>1</temperatureNumber>
@@ -225,7 +227,7 @@
   </autoConfigureMaterial>
   <autoConfigureQuality name="0.2mm">
     <layerHeight>0.2</layerHeight>
-    <topSolidLayers>3</topSolidLayers>
+    <topSolidLayers>4</topSolidLayers>
     <bottomSolidLayers>3</bottomSolidLayers>
     <skirtLayers>1</skirtLayers>
     <infillPercentage>0</infillPercentage>
@@ -235,7 +237,7 @@
     <layerHeight>0.1</layerHeight>
     <topSolidLayers>8</topSolidLayers>
     <bottomSolidLayers>4</bottomSolidLayers>
-    <skirtLayers>1</skirtLayers>
+    <skirtLayers>2</skirtLayers>
     <infillPercentage>20</infillPercentage>
     <supportInfillPercentage>25</supportInfillPercentage>
   </autoConfigureQuality>
