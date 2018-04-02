@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
-<profile name="Delta_smoothie" version="2018-03-27 21:09:19" app="S3D-Software 4.0.0">
+<profile name="Delta_smoothie" version="2018-03-30 20:32:51" app="S3D-Software 4.0.0">
   <baseProfile>Kossel Mini (modified)</baseProfile>
-  <printMaterial>PETG</printMaterial>
-  <printQuality>0.2mm</printQuality>
+  <printMaterial>PLA</printMaterial>
+  <printQuality>0.1mm</printQuality>
   <printExtruders></printExtruders>
   <extruder name="Primary Extruder">
     <toolheadNumber>0</toolheadNumber>
     <diameter>0.3</diameter>
     <autoWidth>1</autoWidth>
     <width>0.36</width>
-    <extrusionMultiplier>0.92</extrusionMultiplier>
+    <extrusionMultiplier>0.93</extrusionMultiplier>
     <useRetract>1</useRetract>
     <retractionDistance>7</retractionDistance>
     <extraRestartDistance>0</extraRestartDistance>
@@ -21,10 +21,10 @@
     <wipeDistance>2</wipeDistance>
   </extruder>
   <primaryExtruder>0</primaryExtruder>
-  <layerHeight>0.2</layerHeight>
-  <topSolidLayers>4</topSolidLayers>
-  <bottomSolidLayers>3</bottomSolidLayers>
-  <perimeterOutlines>2</perimeterOutlines>
+  <layerHeight>0.1</layerHeight>
+  <topSolidLayers>8</topSolidLayers>
+  <bottomSolidLayers>4</bottomSolidLayers>
+  <perimeterOutlines>3</perimeterOutlines>
   <printPerimetersInsideOut>1</printPerimetersInsideOut>
   <startPointOption>2</startPointOption>
   <startPointOriginX>0</startPointOriginX>
@@ -44,8 +44,8 @@
   <aboveRaftSpeedMultiplier>0.3</aboveRaftSpeedMultiplier>
   <useSkirt>1</useSkirt>
   <skirtExtruder>0</skirtExtruder>
-  <skirtLayers>1</skirtLayers>
-  <skirtOutlines>2</skirtOutlines>
+  <skirtLayers>2</skirtLayers>
+  <skirtOutlines>1</skirtOutlines>
   <skirtOffset>10</skirtOffset>
   <usePrimePillar>0</usePrimePillar>
   <primePillarExtruder>999</primePillarExtruder>
@@ -70,7 +70,7 @@
   <internalInfillAngles>0,120,-120</internalInfillAngles>
   <overlapInternalInfillAngles>0</overlapInternalInfillAngles>
   <externalInfillAngles>45,-45</externalInfillAngles>
-  <generateSupport>0</generateSupport>
+  <generateSupport>1</generateSupport>
   <supportExtruder>0</supportExtruder>
   <supportInfillPercentage>25</supportInfillPercentage>
   <supportExtraInflation>0</supportExtraInflation>
@@ -92,7 +92,7 @@
     <relayBetweenLayers>0</relayBetweenLayers>
     <relayBetweenLoops>0</relayBetweenLoops>
     <stabilizeAtStartup>0</stabilizeAtStartup>
-    <setpoint layer="1" temperature="230"/>
+    <setpoint layer="1" temperature="200"/>
   </temperatureController>
   <temperatureController name="Heated Bed">
     <temperatureNumber>1</temperatureNumber>
@@ -100,10 +100,13 @@
     <relayBetweenLayers>0</relayBetweenLayers>
     <relayBetweenLoops>0</relayBetweenLoops>
     <stabilizeAtStartup>0</stabilizeAtStartup>
-    <setpoint layer="1" temperature="75"/>
+    <setpoint layer="1" temperature="65"/>
+    <setpoint layer="2" temperature="60"/>
   </temperatureController>
   <fanSpeed>
     <setpoint layer="1" speed="0"/>
+    <setpoint layer="2" speed="20"/>
+    <setpoint layer="3" speed="50"/>
   </fanSpeed>
   <blipFanToFullPower>1</blipFanToFullPower>
   <adjustSpeedForCooling>1</adjustSpeedForCooling>
@@ -145,7 +148,7 @@
   <baudRateOverride>250000</baudRateOverride>
   <overridePrinterModels>1</overridePrinterModels>
   <printerModelsOverride>Kossel2020.stl</printerModelsOverride>
-  <startingGcode>M204 S2500 ;sets acceleration,,M117 Preheat bed and hotend,M140 S[bed1_temperature] ; Set bed temp and do not wait - preheat,M104 S[extruder0_temperature]; Set extruder and do not wait,G21 ; Units to mm,,G28 ;home,G0 Z100 F10000 ; start Imperial March,G0 Z50 F4500,G0 Z100 F4500,G0 Z50 F4500,G0 Z75 F3650,G0 Z60 F5550,G0 Z110 F4500,G0 Z85 F3650,G0 Z100 F5550,G0 Z50 F4500,G4 P500,G0 Z120 F6900,G0 Z50 F6900,G0 Z120 F6900,G0 Z55 F7150,G0 Z70 F5450,G0 Z120 F4500,G0 Z95 F3650,G0 Z110 F5550,G0 Z160 F4500,G4 P1000 ; end Imperial March,,M109 S[extruder0_temperature] ; Set extruder temp and wait to be reached,M117 Hotend heating complete,M190 S[bed1_temperature] ; Set bed temp and wait to be reached,M117 Bed heating complete,;G28; home,,M117 Purge Nozzle,G1 X0 Y-113 Z5 F7200,G92 E0,G0 E20 F300,G4 S2,G92 E0,;G1 X0 Y0 Z1.0 F10000,,M117 Begin Print</startingGcode>
+  <startingGcode>M204 S2500 ;sets acceleration,,M117 Preheat bed and hotend,M140 S[bed1_temperature] ; Set bed temp and do not wait - preheat,M104 S[extruder0_temperature]; Set extruder and do not wait,G21 ; Units to mm,,G28 ;home,G0 Z100 F10000 ; start Imperial March,G0 Z50 F4500,G0 Z100 F4500,G0 Z50 F4500,G0 Z75 F3650,G0 Z60 F5550,G0 Z110 F4500,G0 Z85 F3650,G0 Z100 F5550,G0 Z50 F4500,G4 P500,G0 Z120 F6900,G0 Z50 F6900,G0 Z120 F6900,G0 Z55 F7150,G0 Z70 F5450,G0 Z120 F4500,G0 Z95 F3650,G0 Z110 F5550,G0 Z160 F4500,G4 P1000 ; end Imperial March,,M109 S[extruder0_temperature] ; Set extruder temp and wait to be reached,M117 Hotend heating complete,M190 S[bed1_temperature] ; Set bed temp and wait to be reached,M117 Bed heating complete,;G28; home,,M117 Purge Nozzle,G1 X0 Y-113 Z5 F7200,G92 E0,G0 E20 F240,G4 S3,G92 E0,;G1 X0 Y0 Z1.0 F10000,,M117 Begin Print</startingGcode>
   <layerChangeGcode></layerChangeGcode>
   <retractionGcode></retractionGcode>
   <toolChangeGcode></toolChangeGcode>
@@ -154,7 +157,7 @@
   <celebration>0</celebration>
   <celebrationSong>Random Song</celebrationSong>
   <postProcessing></postProcessing>
-  <defaultSpeed>3600</defaultSpeed>
+  <defaultSpeed>4800</defaultSpeed>
   <outlineUnderspeed>0.5</outlineUnderspeed>
   <solidInfillUnderspeed>0.75</solidInfillUnderspeed>
   <supportUnderspeed>0.8</supportUnderspeed>
@@ -212,9 +215,10 @@
       <relayBetweenLayers>0</relayBetweenLayers>
       <relayBetweenLoops>0</relayBetweenLoops>
       <stabilizeAtStartup>0</stabilizeAtStartup>
-      <setpoint layer="1" temperature="60"/>
+      <setpoint layer="1" temperature="65"/>
+      <setpoint layer="2" temperature="60"/>
     </temperatureController>
-    <globalExtrusionMultiplier>0.92</globalExtrusionMultiplier>
+    <globalExtrusionMultiplier>0.93</globalExtrusionMultiplier>
     <fanSpeed>
       <setpoint layer="1" speed="0"/>
       <setpoint layer="2" speed="20"/>
@@ -226,7 +230,7 @@
     <topSolidLayers>4</topSolidLayers>
     <bottomSolidLayers>3</bottomSolidLayers>
     <skirtLayers>1</skirtLayers>
-    <infillPercentage>20</infillPercentage>
+    <infillPercentage>25</infillPercentage>
     <supportInfillPercentage>25</supportInfillPercentage>
   </autoConfigureQuality>
   <autoConfigureQuality name="0.1mm">
@@ -262,7 +266,7 @@
       <stabilizeAtStartup>0</stabilizeAtStartup>
       <setpoint layer="1" temperature="75"/>
     </temperatureController>
-    <globalExtrusionMultiplier>0.92</globalExtrusionMultiplier>
+    <globalExtrusionMultiplier>0.93</globalExtrusionMultiplier>
     <fanSpeed>
       <setpoint layer="1" speed="0"/>
     </fanSpeed>
