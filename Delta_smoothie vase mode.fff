@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<profile name="Delta_smoothie (lithophanes)" version="2018-09-22 15:00:21" app="S3D-Software 4.0.1">
+<profile name="Delta_smoothie vase mode" version="2018-09-22 14:53:28" app="S3D-Software 4.0.1">
   <baseProfile>Kossel Mini (modified)</baseProfile>
   <printMaterial>PLA</printMaterial>
-  <printQuality>0.1mm</printQuality>
+  <printQuality>0.3mm</printQuality>
   <printExtruders></printExtruders>
   <extruder name="Primary Extruder">
     <toolheadNumber>0</toolheadNumber>
@@ -10,41 +10,41 @@
     <autoWidth>1</autoWidth>
     <width>0.48</width>
     <extrusionMultiplier>0.87</extrusionMultiplier>
-    <useRetract>0</useRetract>
+    <useRetract>1</useRetract>
     <retractionDistance>7</retractionDistance>
     <extraRestartDistance>0</extraRestartDistance>
     <retractionZLift>0.5</retractionZLift>
     <retractionSpeed>6000</retractionSpeed>
-    <useCoasting>0</useCoasting>
+    <useCoasting>1</useCoasting>
     <coastingDistance>1</coastingDistance>
-    <useWipe>0</useWipe>
+    <useWipe>1</useWipe>
     <wipeDistance>2</wipeDistance>
   </extruder>
   <primaryExtruder>0</primaryExtruder>
-  <layerHeight>0.1</layerHeight>
-  <topSolidLayers>8</topSolidLayers>
-  <bottomSolidLayers>4</bottomSolidLayers>
-  <perimeterOutlines>4</perimeterOutlines>
+  <layerHeight>0.3</layerHeight>
+  <topSolidLayers>0</topSolidLayers>
+  <bottomSolidLayers>0</bottomSolidLayers>
+  <perimeterOutlines>1</perimeterOutlines>
   <printPerimetersInsideOut>1</printPerimetersInsideOut>
   <startPointOption>2</startPointOption>
   <startPointOriginX>0</startPointOriginX>
   <startPointOriginY>0</startPointOriginY>
   <sequentialIslands>0</sequentialIslands>
-  <spiralVaseMode>0</spiralVaseMode>
-  <firstLayerHeightPercentage>100</firstLayerHeightPercentage>
+  <spiralVaseMode>1</spiralVaseMode>
+  <firstLayerHeightPercentage>200</firstLayerHeightPercentage>
   <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
-  <firstLayerUnderspeed>0.3</firstLayerUnderspeed>
+  <firstLayerUnderspeed>0.5</firstLayerUnderspeed>
   <useRaft>0</useRaft>
   <raftExtruder>0</raftExtruder>
   <raftTopLayers>2</raftTopLayers>
-  <raftBaseLayers>0</raftBaseLayers>
-  <raftOffset>5</raftOffset>
-  <raftSeparationDistance>0.14</raftSeparationDistance>
-  <raftTopInfill>100</raftTopInfill>
-  <aboveRaftSpeedMultiplier>0.3</aboveRaftSpeedMultiplier>
+  <raftBaseLayers>1</raftBaseLayers>
+  <raftOffset>3</raftOffset>
+  <raftSeparationDistance>0.3</raftSeparationDistance>
+  <raftTopInfill>85</raftTopInfill>
+  <aboveRaftSpeedMultiplier>0.5</aboveRaftSpeedMultiplier>
   <useSkirt>1</useSkirt>
   <skirtExtruder>0</skirtExtruder>
-  <skirtLayers>3</skirtLayers>
+  <skirtLayers>1</skirtLayers>
   <skirtOutlines>10</skirtOutlines>
   <skirtOffset>0</skirtOffset>
   <usePrimePillar>0</usePrimePillar>
@@ -63,7 +63,7 @@
   <internalInfillPattern>Full Honeycomb</internalInfillPattern>
   <externalInfillPattern>Rectilinear</externalInfillPattern>
   <infillPercentage>0</infillPercentage>
-  <outlineOverlapPercentage>75</outlineOverlapPercentage>
+  <outlineOverlapPercentage>80</outlineOverlapPercentage>
   <infillExtrusionWidthPercentage>100</infillExtrusionWidthPercentage>
   <minInfillLength>1</minInfillLength>
   <infillLayerInterval>1</infillLayerInterval>
@@ -73,17 +73,17 @@
   <generateSupport>0</generateSupport>
   <supportExtruder>0</supportExtruder>
   <supportInfillPercentage>25</supportInfillPercentage>
-  <supportExtraInflation>0</supportExtraInflation>
-  <supportBaseLayers>0</supportBaseLayers>
+  <supportExtraInflation>0.4</supportExtraInflation>
+  <supportBaseLayers>1</supportBaseLayers>
   <denseSupportExtruder>0</denseSupportExtruder>
-  <denseSupportLayers>0</denseSupportLayers>
-  <denseSupportInfillPercentage>70</denseSupportInfillPercentage>
+  <denseSupportLayers>5</denseSupportLayers>
+  <denseSupportInfillPercentage>40</denseSupportInfillPercentage>
   <supportLayerInterval>1</supportLayerInterval>
-  <supportHorizontalPartOffset>0.3</supportHorizontalPartOffset>
+  <supportHorizontalPartOffset>0.5</supportHorizontalPartOffset>
   <supportUpperSeparationLayers>1</supportUpperSeparationLayers>
   <supportLowerSeparationLayers>1</supportLowerSeparationLayers>
   <supportType>1</supportType>
-  <supportGridSpacing>2</supportGridSpacing>
+  <supportGridSpacing>1</supportGridSpacing>
   <maxOverhangAngle>60</maxOverhangAngle>
   <supportAngles>0</supportAngles>
   <temperatureController name="Primary Extruder">
@@ -92,7 +92,7 @@
     <relayBetweenLayers>0</relayBetweenLayers>
     <relayBetweenLoops>0</relayBetweenLoops>
     <stabilizeAtStartup>0</stabilizeAtStartup>
-    <setpoint layer="1" temperature="200"/>
+    <setpoint layer="1" temperature="220"/>
   </temperatureController>
   <temperatureController name="Heated Bed">
     <temperatureNumber>1</temperatureNumber>
@@ -104,13 +104,12 @@
   </temperatureController>
   <fanSpeed>
     <setpoint layer="1" speed="0"/>
-    <setpoint layer="2" speed="20"/>
-    <setpoint layer="3" speed="50"/>
+    <setpoint layer="2" speed="50"/>
   </fanSpeed>
   <blipFanToFullPower>1</blipFanToFullPower>
-  <adjustSpeedForCooling>1</adjustSpeedForCooling>
-  <minSpeedLayerTime>5</minSpeedLayerTime>
-  <minCoolingSpeedSlowdown>30</minCoolingSpeedSlowdown>
+  <adjustSpeedForCooling>0</adjustSpeedForCooling>
+  <minSpeedLayerTime>10</minSpeedLayerTime>
+  <minCoolingSpeedSlowdown>10</minCoolingSpeedSlowdown>
   <increaseFanForCooling>1</increaseFanForCooling>
   <minFanLayerTime>20</minFanLayerTime>
   <maxCoolingFanSpeed>100</maxCoolingFanSpeed>
@@ -131,8 +130,8 @@
   <strokeXoverride>138</strokeXoverride>
   <strokeYoverride>138</strokeYoverride>
   <strokeZoverride>220</strokeZoverride>
-  <originOffsetXoverride>69</originOffsetXoverride>
-  <originOffsetYoverride>69</originOffsetYoverride>
+  <originOffsetXoverride>68</originOffsetXoverride>
+  <originOffsetYoverride>68</originOffsetYoverride>
   <originOffsetZoverride>0</originOffsetZoverride>
   <homeXdirOverride>0</homeXdirOverride>
   <homeYdirOverride>0</homeYdirOverride>
@@ -156,16 +155,16 @@
   <celebration>0</celebration>
   <celebrationSong>Random Song</celebrationSong>
   <postProcessing></postProcessing>
-  <defaultSpeed>2400</defaultSpeed>
-  <outlineUnderspeed>0.5</outlineUnderspeed>
-  <solidInfillUnderspeed>0.75</solidInfillUnderspeed>
-  <supportUnderspeed>0.8</supportUnderspeed>
-  <rapidXYspeed>6000</rapidXYspeed>
-  <rapidZspeed>1800</rapidZspeed>
+  <defaultSpeed>4800</defaultSpeed>
+  <outlineUnderspeed>0.75</outlineUnderspeed>
+  <solidInfillUnderspeed>0.7</solidInfillUnderspeed>
+  <supportUnderspeed>0.7</supportUnderspeed>
+  <rapidXYspeed>9000</rapidXYspeed>
+  <rapidZspeed>3000</rapidZspeed>
   <minBridgingArea>5</minBridgingArea>
   <bridgingExtraInflation>2</bridgingExtraInflation>
   <bridgingExtrusionMultiplier>0.9</bridgingExtrusionMultiplier>
-  <bridgingSpeedMultiplier>0.5</bridgingSpeedMultiplier>
+  <bridgingSpeedMultiplier>0.25</bridgingSpeedMultiplier>
   <useFixedBridgingAngle>0</useFixedBridgingAngle>
   <fixedBridgingAngle>0</fixedBridgingAngle>
   <applyBridgingToPerimeters>1</applyBridgingToPerimeters>
@@ -173,17 +172,17 @@
   <filamentPricesPerKg>20|25|25|25|25|25</filamentPricesPerKg>
   <filamentDensities>1.25|1.25|1.25|1.25|1.25|1.25</filamentDensities>
   <useMinPrintHeight>0</useMinPrintHeight>
-  <minPrintHeight>30</minPrintHeight>
+  <minPrintHeight>0.6</minPrintHeight>
   <useMaxPrintHeight>0</useMaxPrintHeight>
-  <maxPrintHeight>35</maxPrintHeight>
+  <maxPrintHeight>20</maxPrintHeight>
   <useDiaphragm>0</useDiaphragm>
   <diaphragmLayerInterval>20</diaphragmLayerInterval>
   <robustSlicing>1</robustSlicing>
   <mergeAllIntoSolid>0</mergeAllIntoSolid>
-  <onlyRetractWhenCrossingOutline>1</onlyRetractWhenCrossingOutline>
+  <onlyRetractWhenCrossingOutline>0</onlyRetractWhenCrossingOutline>
   <retractBetweenLayers>0</retractBetweenLayers>
   <useRetractionMinTravel>1</useRetractionMinTravel>
-  <retractionMinTravel>0</retractionMinTravel>
+  <retractionMinTravel>2</retractionMinTravel>
   <retractWhileWiping>1</retractWhileWiping>
   <onlyWipeOutlines>1</onlyWipeOutlines>
   <avoidCrossingOutline>1</avoidCrossingOutline>
@@ -196,7 +195,7 @@
   <thinWallAllowedOverlapPercentage>30</thinWallAllowedOverlapPercentage>
   <singleExtrusionMinLength>1</singleExtrusionMinLength>
   <singleExtrusionMinPrintingWidthPercentage>75</singleExtrusionMinPrintingWidthPercentage>
-  <singleExtrusionMaxPrintingWidthPercentage>150</singleExtrusionMaxPrintingWidthPercentage>
+  <singleExtrusionMaxPrintingWidthPercentage>200</singleExtrusionMaxPrintingWidthPercentage>
   <singleExtrusionEndpointExtension>0.2</singleExtrusionEndpointExtension>
   <horizontalSizeCompensation>0</horizontalSizeCompensation>
   <autoConfigureMaterial name="PLA">
@@ -206,7 +205,7 @@
       <relayBetweenLayers>0</relayBetweenLayers>
       <relayBetweenLoops>0</relayBetweenLoops>
       <stabilizeAtStartup>0</stabilizeAtStartup>
-      <setpoint layer="1" temperature="200"/>
+      <setpoint layer="1" temperature="220"/>
     </temperatureController>
     <temperatureController name="Heated Bed">
       <temperatureNumber>1</temperatureNumber>
@@ -219,32 +218,31 @@
     <globalExtrusionMultiplier>0.87</globalExtrusionMultiplier>
     <fanSpeed>
       <setpoint layer="1" speed="0"/>
-      <setpoint layer="2" speed="20"/>
-      <setpoint layer="3" speed="50"/>
+      <setpoint layer="2" speed="50"/>
     </fanSpeed>
   </autoConfigureMaterial>
   <autoConfigureQuality name="0.2mm">
     <layerHeight>0.2</layerHeight>
-    <topSolidLayers>4</topSolidLayers>
+    <topSolidLayers>0</topSolidLayers>
     <bottomSolidLayers>3</bottomSolidLayers>
     <skirtLayers>1</skirtLayers>
     <infillPercentage>20</infillPercentage>
-    <supportInfillPercentage>25</supportInfillPercentage>
+    <supportInfillPercentage>20</supportInfillPercentage>
   </autoConfigureQuality>
   <autoConfigureQuality name="0.1mm">
     <layerHeight>0.1</layerHeight>
     <topSolidLayers>8</topSolidLayers>
     <bottomSolidLayers>4</bottomSolidLayers>
-    <skirtLayers>3</skirtLayers>
-    <infillPercentage>0</infillPercentage>
+    <skirtLayers>2</skirtLayers>
+    <infillPercentage>20</infillPercentage>
     <supportInfillPercentage>25</supportInfillPercentage>
   </autoConfigureQuality>
   <autoConfigureQuality name="0.3mm">
     <layerHeight>0.3</layerHeight>
-    <topSolidLayers>3</topSolidLayers>
-    <bottomSolidLayers>2</bottomSolidLayers>
+    <topSolidLayers>0</topSolidLayers>
+    <bottomSolidLayers>0</bottomSolidLayers>
     <skirtLayers>1</skirtLayers>
-    <infillPercentage>20</infillPercentage>
+    <infillPercentage>0</infillPercentage>
     <supportInfillPercentage>25</supportInfillPercentage>
   </autoConfigureQuality>
   <autoConfigureMaterial name="PETG">
@@ -264,18 +262,18 @@
       <stabilizeAtStartup>0</stabilizeAtStartup>
       <setpoint layer="1" temperature="75"/>
     </temperatureController>
-    <globalExtrusionMultiplier>0.92</globalExtrusionMultiplier>
+    <globalExtrusionMultiplier>0.93</globalExtrusionMultiplier>
     <fanSpeed>
       <setpoint layer="1" speed="0"/>
     </fanSpeed>
   </autoConfigureMaterial>
   <autoConfigureQuality name="0.15mm">
     <layerHeight>0.15</layerHeight>
-    <topSolidLayers>5</topSolidLayers>
+    <topSolidLayers>0</topSolidLayers>
     <bottomSolidLayers>4</bottomSolidLayers>
     <skirtLayers>1</skirtLayers>
-    <infillPercentage>20</infillPercentage>
-    <supportInfillPercentage>25</supportInfillPercentage>
+    <infillPercentage>0</infillPercentage>
+    <supportInfillPercentage>20</supportInfillPercentage>
   </autoConfigureQuality>
   <autoConfigureQuality name="0.05mm">
     <layerHeight>0.05</layerHeight>
@@ -284,5 +282,13 @@
     <skirtLayers>2</skirtLayers>
     <infillPercentage>20</infillPercentage>
     <supportInfillPercentage>25</supportInfillPercentage>
+  </autoConfigureQuality>
+  <autoConfigureQuality name="0.25mm">
+    <layerHeight>0.25</layerHeight>
+    <topSolidLayers>4</topSolidLayers>
+    <bottomSolidLayers>3</bottomSolidLayers>
+    <skirtLayers>1</skirtLayers>
+    <infillPercentage>20</infillPercentage>
+    <supportInfillPercentage>20</supportInfillPercentage>
   </autoConfigureQuality>
 </profile>
