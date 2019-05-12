@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<profile name="Delta_smoothie" version="2019-04-03 22:43:01" app="S3D-Software 4.1.1">
+<profile name="Delta_smoothie" version="2019-05-11 20:12:41" app="S3D-Software 4.1.2">
   <baseProfile>Kossel Mini (modified)</baseProfile>
   <printMaterial>PLA</printMaterial>
-  <printQuality>0.243mm</printQuality>
+  <printQuality>0.162mm</printQuality>
   <printExtruders></printExtruders>
   <extruder name="Primary Extruder">
     <toolheadNumber>0</toolheadNumber>
@@ -21,9 +21,9 @@
     <wipeDistance>2</wipeDistance>
   </extruder>
   <primaryExtruder>0</primaryExtruder>
-  <layerHeight>0.243</layerHeight>
-  <topSolidLayers>4</topSolidLayers>
-  <bottomSolidLayers>3</bottomSolidLayers>
+  <layerHeight>0.162</layerHeight>
+  <topSolidLayers>6</topSolidLayers>
+  <bottomSolidLayers>4</bottomSolidLayers>
   <perimeterOutlines>2</perimeterOutlines>
   <printPerimetersInsideOut>1</printPerimetersInsideOut>
   <startPointOption>2</startPointOption>
@@ -31,7 +31,7 @@
   <startPointOriginY>-200</startPointOriginY>
   <sequentialIslands>0</sequentialIslands>
   <spiralVaseMode>0</spiralVaseMode>
-  <firstLayerHeightPercentage>150</firstLayerHeightPercentage>
+  <firstLayerHeightPercentage>200</firstLayerHeightPercentage>
   <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
   <firstLayerUnderspeed>0.25</firstLayerUnderspeed>
   <useRaft>0</useRaft>
@@ -72,25 +72,25 @@
   <externalInfillAngles>45,-45</externalInfillAngles>
   <generateSupport>0</generateSupport>
   <supportExtruder>0</supportExtruder>
-  <supportInfillPercentage>25</supportInfillPercentage>
+  <supportInfillPercentage>20</supportInfillPercentage>
   <supportExtraInflation>1</supportExtraInflation>
   <supportBaseLayers>1</supportBaseLayers>
   <denseSupportExtruder>0</denseSupportExtruder>
-  <denseSupportLayers>10</denseSupportLayers>
-  <denseSupportInfillPercentage>40</denseSupportInfillPercentage>
+  <denseSupportLayers>0</denseSupportLayers>
+  <denseSupportInfillPercentage>30</denseSupportInfillPercentage>
   <supportLayerInterval>1</supportLayerInterval>
   <supportHorizontalPartOffset>0.5</supportHorizontalPartOffset>
   <supportUpperSeparationLayers>1</supportUpperSeparationLayers>
   <supportLowerSeparationLayers>1</supportLowerSeparationLayers>
   <supportType>0</supportType>
   <supportGridSpacing>3</supportGridSpacing>
-  <maxOverhangAngle>45</maxOverhangAngle>
+  <maxOverhangAngle>55</maxOverhangAngle>
   <supportAngles>0</supportAngles>
   <temperatureController name="Primary Extruder">
     <temperatureNumber>0</temperatureNumber>
     <isHeatedBed>0</isHeatedBed>
     <stabilizeAtStartup>0</stabilizeAtStartup>
-    <setpoint layer="1" temperature="205"/>
+    <setpoint layer="1" temperature="215"/>
   </temperatureController>
   <temperatureController name="Heated Bed">
     <temperatureNumber>1</temperatureNumber>
@@ -100,14 +100,14 @@
   </temperatureController>
   <fanSpeed>
     <setpoint layer="1" speed="0"/>
-    <setpoint layer="2" speed="100"/>
+    <setpoint layer="4" speed="100"/>
   </fanSpeed>
   <blipFanToFullPower>1</blipFanToFullPower>
   <adjustSpeedForCooling>1</adjustSpeedForCooling>
-  <minSpeedLayerTime>7</minSpeedLayerTime>
-  <minCoolingSpeedSlowdown>20</minCoolingSpeedSlowdown>
+  <minSpeedLayerTime>15</minSpeedLayerTime>
+  <minCoolingSpeedSlowdown>10</minCoolingSpeedSlowdown>
   <increaseFanForCooling>0</increaseFanForCooling>
-  <minFanLayerTime>10</minFanLayerTime>
+  <minFanLayerTime>20</minFanLayerTime>
   <maxCoolingFanSpeed>100</maxCoolingFanSpeed>
   <increaseFanForBridging>0</increaseFanForBridging>
   <bridgingFanSpeed>100</bridgingFanSpeed>
@@ -142,7 +142,7 @@
   <baudRateOverride>250000</baudRateOverride>
   <overridePrinterModels>1</overridePrinterModels>
   <printerModelsOverride>Kossel2020.stl</printerModelsOverride>
-  <startingGcode>M204 S2000 ;sets acceleration,;M204 P1600 T2400 ;sets acceleration,,M117 Preheat bed and hotend,M140 S[bed1_temperature] ; Set bed temp and do not wait - preheat,M104 S[extruder0_temperature]; Set extruder and do not wait,M190 S[bed1_temperature] ; Set bed temp and wait to be reached,M117 Bed heating complete,G21 ; Units to mm,,G28 ;home,,;G0 Z100 F10000 ; start Imperial March,;G0 Z50 F4500,;G0 Z100 F4500,;G0 Z50 F4500,;G0 Z75 F3650,;G0 Z60 F5550,;G0 Z110 F4500,;G0 Z85 F3650,;G0 Z100 F5550,;G0 Z50 F4500,;G4 P500,;G0 Z120 F6900,;G0 Z50 F6900,;G0 Z120 F6900,;G0 Z55 F7150,;G0 Z70 F5450,;G0 Z120 F4500,;G0 Z95 F3650,;G0 Z110 F5550,;G0 Z160 F4500,;G4 P1000 ; end Imperial March,,,;bed leveling and find Z0,M280 S10.6; bltouch alarm release,M280 S3.0; deploy probe,G30 Z0.95 F3600 ;find Z0,M280 S7.0; retract probe,;double touch,G1 Z30 F3600,M280 S10.6; bltouch alarm release,M280 S3.0; deploy probe,G30 Z0.95 F1200 ;find Z0,M280 S7.0; retract probe,,;get into prime position,G1 X10 Y-95 Z10 F7200,,M109 S[extruder0_temperature] ; Set extruder temp and wait to be reached,M117 Hotend heating complete,,M117 Purge Nozzle,G1 Z5 F600,,G92 E0; reset,G0 X0 Z2 E8 F300 ;purge,G92 E0; reset,G0 X-20 Z0.6 E8 F120 ;purge and drag,G92 E0; reset,G4 S5; pause for 5 s,,M117 Begin Print</startingGcode>
+  <startingGcode>M204 S2000 ;sets acceleration,;M204 P1600 T2400 ;sets acceleration,,M117 Preheat bed and hotend,M140 S[bed1_temperature] ; Set bed temp and do not wait - preheat,M104 S[extruder0_temperature]; Set extruder and do not wait,M190 S[bed1_temperature] ; Set bed temp and wait to be reached,M117 Bed heating complete,G21 ; Units to mm,,G28 ;home,,;G0 Z100 F10000 ; start Imperial March,;G0 Z50 F4500,;G0 Z100 F4500,;G0 Z50 F4500,;G0 Z75 F3650,;G0 Z60 F5550,;G0 Z110 F4500,;G0 Z85 F3650,;G0 Z100 F5550,;G0 Z50 F4500,;G4 P500,;G0 Z120 F6900,;G0 Z50 F6900,;G0 Z120 F6900,;G0 Z55 F7150,;G0 Z70 F5450,;G0 Z120 F4500,;G0 Z95 F3650,;G0 Z110 F5550,;G0 Z160 F4500,;G4 P1000 ; end Imperial March,,,;bed leveling and find Z0,M280 S10.6; bltouch alarm release,M280 S3.0; deploy probe,G30 Z0.95 F3600 ;find Z0,M280 S7.0; retract probe,;double touch,G1 Z30 F3600,M280 S10.6; bltouch alarm release,M280 S3.0; deploy probe,;G30 Z0.95 F1200 ;find Z0   (201904412-this was too close),G30 Z0.8 F1200 ;find Z0      (20190412 this is better),M280 S7.0; retract probe,,;get into prime position,G1 X15 Y-95 Z10 F7200,,M109 S[extruder0_temperature] ; Set extruder temp and wait to be reached,M117 Hotend heating complete,,M117 Purge Nozzle,G1 Z5 F600,,G92 E0; reset,G0 X0 Z2 E8 F300 ;purge,G92 E0; reset,G0 X-20 Z0.6 E8 F120 ;purge and drag,G92 E6 F120; retract 2mm,G92 E0; reset,G4 S2; pause for 2 s,,,M117 Begin Print</startingGcode>
   <layerChangeGcode></layerChangeGcode>
   <retractionGcode></retractionGcode>
   <toolChangeGcode></toolChangeGcode>
@@ -152,8 +152,8 @@
   <celebrationSong>Random Song</celebrationSong>
   <postProcessing></postProcessing>
   <defaultSpeed>4800</defaultSpeed>
-  <outlineUnderspeed>0.5</outlineUnderspeed>
-  <solidInfillUnderspeed>0.66</solidInfillUnderspeed>
+  <outlineUnderspeed>0.4</outlineUnderspeed>
+  <solidInfillUnderspeed>0.5</solidInfillUnderspeed>
   <supportUnderspeed>0.75</supportUnderspeed>
   <rapidXYspeed>7200</rapidXYspeed>
   <rapidZspeed>3000</rapidZspeed>
@@ -178,7 +178,7 @@
   <onlyRetractWhenCrossingOutline>1</onlyRetractWhenCrossingOutline>
   <retractBetweenLayers>1</retractBetweenLayers>
   <useRetractionMinTravel>1</useRetractionMinTravel>
-  <retractionMinTravel>2</retractionMinTravel>
+  <retractionMinTravel>1</retractionMinTravel>
   <retractWhileWiping>1</retractWhileWiping>
   <onlyWipeOutlines>1</onlyWipeOutlines>
   <avoidCrossingOutline>1</avoidCrossingOutline>
@@ -186,20 +186,20 @@
   <toolChangeRetractionDistance>12</toolChangeRetractionDistance>
   <toolChangeExtraRestartDistance>-0.5</toolChangeExtraRestartDistance>
   <toolChangeRetractionSpeed>600</toolChangeRetractionSpeed>
-  <externalThinWallType>0</externalThinWallType>
+  <externalThinWallType>1</externalThinWallType>
   <internalThinWallType>1</internalThinWallType>
-  <thinWallAllowedOverlapPercentage>30</thinWallAllowedOverlapPercentage>
-  <singleExtrusionMinLength>3</singleExtrusionMinLength>
+  <thinWallAllowedOverlapPercentage>40</thinWallAllowedOverlapPercentage>
+  <singleExtrusionMinLength>0.5</singleExtrusionMinLength>
   <singleExtrusionMinPrintingWidthPercentage>50</singleExtrusionMinPrintingWidthPercentage>
   <singleExtrusionMaxPrintingWidthPercentage>200</singleExtrusionMaxPrintingWidthPercentage>
   <singleExtrusionEndpointExtension>0.2</singleExtrusionEndpointExtension>
-  <horizontalSizeCompensation>-0.03</horizontalSizeCompensation>
+  <horizontalSizeCompensation>-0.05</horizontalSizeCompensation>
   <autoConfigureMaterial name="PLA">
     <temperatureController name="Primary Extruder">
       <temperatureNumber>0</temperatureNumber>
       <isHeatedBed>0</isHeatedBed>
       <stabilizeAtStartup>0</stabilizeAtStartup>
-      <setpoint layer="1" temperature="205"/>
+      <setpoint layer="1" temperature="215"/>
     </temperatureController>
     <temperatureController name="Heated Bed">
       <temperatureNumber>1</temperatureNumber>
@@ -210,7 +210,7 @@
     <globalExtrusionMultiplier>0.9</globalExtrusionMultiplier>
     <fanSpeed>
       <setpoint layer="1" speed="0"/>
-      <setpoint layer="2" speed="100"/>
+      <setpoint layer="4" speed="100"/>
     </fanSpeed>
   </autoConfigureMaterial>
   <autoConfigureQuality name="0.2mm">
@@ -316,7 +316,7 @@
   </autoConfigureQuality>
   <autoConfigureQuality name="0.243mm">
     <layerHeight>0.243</layerHeight>
-    <topSolidLayers>4</topSolidLayers>
+    <topSolidLayers>5</topSolidLayers>
     <bottomSolidLayers>3</bottomSolidLayers>
     <skirtLayers>1</skirtLayers>
     <infillPercentage>20</infillPercentage>
