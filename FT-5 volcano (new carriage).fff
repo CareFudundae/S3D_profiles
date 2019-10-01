@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
-<profile name="FT-5 volcano (new carriage)" version="2019-07-13 20:55:49" app="S3D-Software 4.1.2">
+<profile name="FT-5 volcano (new carriage)" version="2019-09-24 21:08:03" app="S3D-Software 4.1.2">
   <baseProfile>Folger Tech FT-5 (modified)</baseProfile>
   <printMaterial>PLA</printMaterial>
-  <printQuality>0.4mm</printQuality>
+  <printQuality>0.2mm</printQuality>
   <printExtruders></printExtruders>
   <extruder name="Primary Extruder">
     <toolheadNumber>0</toolheadNumber>
-    <diameter>0.8</diameter>
+    <diameter>0.6</diameter>
     <autoWidth>1</autoWidth>
-    <width>0.96</width>
-    <extrusionMultiplier>0.95</extrusionMultiplier>
+    <width>0.72</width>
+    <extrusionMultiplier>1</extrusionMultiplier>
     <useRetract>1</useRetract>
     <retractionDistance>1</retractionDistance>
     <extraRestartDistance>0</extraRestartDistance>
-    <retractionZLift>0</retractionZLift>
+    <retractionZLift>0.5</retractionZLift>
     <retractionSpeed>3000</retractionSpeed>
     <useCoasting>0</useCoasting>
     <coastingDistance>0.2</coastingDistance>
@@ -21,14 +21,14 @@
     <wipeDistance>1</wipeDistance>
   </extruder>
   <primaryExtruder>0</primaryExtruder>
-  <layerHeight>0.4</layerHeight>
-  <topSolidLayers>3</topSolidLayers>
-  <bottomSolidLayers>3</bottomSolidLayers>
+  <layerHeight>0.2</layerHeight>
+  <topSolidLayers>5</topSolidLayers>
+  <bottomSolidLayers>4</bottomSolidLayers>
   <perimeterOutlines>2</perimeterOutlines>
   <printPerimetersInsideOut>1</printPerimetersInsideOut>
   <startPointOption>2</startPointOption>
-  <startPointOriginX>150</startPointOriginX>
-  <startPointOriginY>300</startPointOriginY>
+  <startPointOriginX>0</startPointOriginX>
+  <startPointOriginY>0</startPointOriginY>
   <sequentialIslands>0</sequentialIslands>
   <spiralVaseMode>0</spiralVaseMode>
   <firstLayerHeightPercentage>100</firstLayerHeightPercentage>
@@ -46,7 +46,7 @@
   <skirtExtruder>0</skirtExtruder>
   <skirtLayers>1</skirtLayers>
   <skirtOutlines>1</skirtOutlines>
-  <skirtOffset>2</skirtOffset>
+  <skirtOffset>1</skirtOffset>
   <usePrimePillar>0</usePrimePillar>
   <primePillarExtruder>999</primePillarExtruder>
   <primePillarWidth>12</primePillarWidth>
@@ -69,7 +69,7 @@
   <infillLayerInterval>1</infillLayerInterval>
   <internalInfillAngles>45,-45</internalInfillAngles>
   <overlapInternalInfillAngles>1</overlapInternalInfillAngles>
-  <externalInfillAngles>45,-45</externalInfillAngles>
+  <externalInfillAngles>-45,45</externalInfillAngles>
   <generateSupport>0</generateSupport>
   <supportExtruder>0</supportExtruder>
   <supportInfillPercentage>15</supportInfillPercentage>
@@ -105,7 +105,7 @@
   <blipFanToFullPower>1</blipFanToFullPower>
   <adjustSpeedForCooling>1</adjustSpeedForCooling>
   <minSpeedLayerTime>30</minSpeedLayerTime>
-  <minCoolingSpeedSlowdown>20</minCoolingSpeedSlowdown>
+  <minCoolingSpeedSlowdown>30</minCoolingSpeedSlowdown>
   <increaseFanForCooling>1</increaseFanForCooling>
   <minFanLayerTime>20</minFanLayerTime>
   <maxCoolingFanSpeed>100</maxCoolingFanSpeed>
@@ -150,13 +150,13 @@
   <exportFileFormat>gcode</exportFileFormat>
   <celebration>0</celebration>
   <celebrationSong>Random Song</celebrationSong>
-  <postProcessing>curl -k -H &quot;X-Api-Key: BC51FC0A7CEE48C2AFC038C5583B3F9E&quot; -F &quot;select=false&quot; -F &quot;print=false&quot; -F &quot;file=@[output_filepath]&quot; &quot;http://192.168.1.176/api/files/local&quot; {STRIP &quot;; postProcessing&quot;}</postProcessing>
-  <defaultSpeed>3000</defaultSpeed>
+  <postProcessing></postProcessing>
+  <defaultSpeed>3600</defaultSpeed>
   <outlineUnderspeed>0.5</outlineUnderspeed>
   <solidInfillUnderspeed>0.5</solidInfillUnderspeed>
   <supportUnderspeed>1</supportUnderspeed>
-  <rapidXYspeed>3600</rapidXYspeed>
-  <rapidZspeed>1200</rapidZspeed>
+  <rapidXYspeed>4200</rapidXYspeed>
+  <rapidZspeed>600</rapidZspeed>
   <minBridgingArea>5</minBridgingArea>
   <bridgingExtraInflation>2</bridgingExtraInflation>
   <bridgingExtrusionMultiplier>1</bridgingExtrusionMultiplier>
@@ -177,16 +177,16 @@
   <mergeAllIntoSolid>0</mergeAllIntoSolid>
   <onlyRetractWhenCrossingOutline>1</onlyRetractWhenCrossingOutline>
   <retractBetweenLayers>1</retractBetweenLayers>
-  <useRetractionMinTravel>0</useRetractionMinTravel>
-  <retractionMinTravel>1</retractionMinTravel>
-  <retractWhileWiping>1</retractWhileWiping>
-  <onlyWipeOutlines>1</onlyWipeOutlines>
+  <useRetractionMinTravel>1</useRetractionMinTravel>
+  <retractionMinTravel>2</retractionMinTravel>
+  <retractWhileWiping>0</retractWhileWiping>
+  <onlyWipeOutlines>0</onlyWipeOutlines>
   <avoidCrossingOutline>1</avoidCrossingOutline>
   <maxMovementDetourFactor>2</maxMovementDetourFactor>
   <toolChangeRetractionDistance>12</toolChangeRetractionDistance>
   <toolChangeExtraRestartDistance>-0.5</toolChangeExtraRestartDistance>
   <toolChangeRetractionSpeed>600</toolChangeRetractionSpeed>
-  <externalThinWallType>1</externalThinWallType>
+  <externalThinWallType>0</externalThinWallType>
   <internalThinWallType>1</internalThinWallType>
   <thinWallAllowedOverlapPercentage>40</thinWallAllowedOverlapPercentage>
   <singleExtrusionMinLength>1</singleExtrusionMinLength>
@@ -207,7 +207,7 @@
       <stabilizeAtStartup>0</stabilizeAtStartup>
       <setpoint layer="1" temperature="60"/>
     </temperatureController>
-    <globalExtrusionMultiplier>0.95</globalExtrusionMultiplier>
+    <globalExtrusionMultiplier>1</globalExtrusionMultiplier>
     <fanSpeed>
       <setpoint layer="1" speed="0"/>
       <setpoint layer="2" speed="50"/>
@@ -224,9 +224,9 @@
   <autoConfigureQuality name="0.2mm">
     <layerHeight>0.2</layerHeight>
     <topSolidLayers>5</topSolidLayers>
-    <bottomSolidLayers>3</bottomSolidLayers>
+    <bottomSolidLayers>4</bottomSolidLayers>
     <skirtLayers>1</skirtLayers>
-    <infillPercentage>15</infillPercentage>
+    <infillPercentage>20</infillPercentage>
     <supportInfillPercentage>15</supportInfillPercentage>
   </autoConfigureQuality>
   <autoConfigureQuality name="0.3mm">
@@ -234,7 +234,7 @@
     <topSolidLayers>4</topSolidLayers>
     <bottomSolidLayers>3</bottomSolidLayers>
     <skirtLayers>1</skirtLayers>
-    <infillPercentage>20</infillPercentage>
+    <infillPercentage>10</infillPercentage>
     <supportInfillPercentage>20</supportInfillPercentage>
   </autoConfigureQuality>
   <autoConfigureMaterial name="PETG">
@@ -273,18 +273,17 @@
       <temperatureNumber>0</temperatureNumber>
       <isHeatedBed>0</isHeatedBed>
       <stabilizeAtStartup>0</stabilizeAtStartup>
-      <setpoint layer="1" temperature="210"/>
+      <setpoint layer="1" temperature="225"/>
     </temperatureController>
     <temperatureController name="Heated Bed">
       <temperatureNumber>0</temperatureNumber>
       <isHeatedBed>1</isHeatedBed>
       <stabilizeAtStartup>0</stabilizeAtStartup>
-      <setpoint layer="1" temperature="80"/>
+      <setpoint layer="1" temperature="75"/>
     </temperatureController>
     <globalExtrusionMultiplier>1</globalExtrusionMultiplier>
     <fanSpeed>
       <setpoint layer="1" speed="0"/>
-      <setpoint layer="2" speed="50"/>
     </fanSpeed>
   </autoConfigureMaterial>
   <autoConfigureQuality name="0.15mm">
@@ -306,7 +305,7 @@
   <autoConfigureQuality name="0.4mm">
     <layerHeight>0.4</layerHeight>
     <topSolidLayers>3</topSolidLayers>
-    <bottomSolidLayers>3</bottomSolidLayers>
+    <bottomSolidLayers>2</bottomSolidLayers>
     <skirtLayers>1</skirtLayers>
     <infillPercentage>20</infillPercentage>
     <supportInfillPercentage>15</supportInfillPercentage>
@@ -316,7 +315,7 @@
     <topSolidLayers>3</topSolidLayers>
     <bottomSolidLayers>2</bottomSolidLayers>
     <skirtLayers>1</skirtLayers>
-    <infillPercentage>20</infillPercentage>
+    <infillPercentage>5</infillPercentage>
     <supportInfillPercentage>15</supportInfillPercentage>
   </autoConfigureQuality>
   <autoConfigureQuality name="1.0mm">
